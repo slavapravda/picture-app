@@ -5,7 +5,7 @@ import { getSinglePhoto } from '../../redux/slice/photoOperations';
 import { PhotoComponent } from '../PhotoComponent/PhotoComponent';
 import PropTypes from 'prop-types';
 
-function SinglePhotoComponent({ route }) {
+export const SinglePhotoComponent = ({ route }) => {
   const { id } = route.params;
   const dispatch = useDispatch();
   useEffect(() => {
@@ -17,9 +17,7 @@ function SinglePhotoComponent({ route }) {
       {singlePhoto && <PhotoComponent url={singlePhoto.urls.full} width={100} height={800} />}
     </View>
   );
-}
-
-export default SinglePhotoComponent;
+};
 
 SinglePhotoComponent.propTypes = {
   route: PropTypes.object

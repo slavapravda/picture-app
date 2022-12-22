@@ -1,11 +1,13 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
+
 import { PhotoListComponent } from '../PhotoListComponent/PhotoListComponent';
-import SinglePhotoComponent from '../SinglePhotoComponent/SinglePhotoComponent';
+import { SinglePhotoComponent } from '../SinglePhotoComponent/SinglePhotoComponent';
+
 const Stack = createNativeStackNavigator();
 
-export function NavigationComponent() {
+export const NavigationComponent = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -22,4 +24,4 @@ export function NavigationComponent() {
       </Stack.Navigator>
     </NavigationContainer>
   );
-}
+};

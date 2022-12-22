@@ -1,19 +1,19 @@
 import React, { useEffect } from 'react';
+
 import { useSelector, useDispatch } from 'react-redux';
 import { FlatList, TouchableOpacity } from 'react-native';
+import PropTypes from 'prop-types';
 
 import { getPhotos } from '../../redux/slice/photoOperations';
 import { PhotoComponent } from '../PhotoComponent/PhotoComponent';
 
-import PropTypes from 'prop-types';
-
-export function PhotoListComponent({ navigation }) {
+export const PhotoListComponent = ({ navigation }) => {
   const { photos } = useSelector((state) => state.photoReducer);
-
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getPhotos());
   }, [dispatch]);
+
   return (
     <FlatList
       data={photos}
@@ -31,7 +31,7 @@ export function PhotoListComponent({ navigation }) {
       )}
     />
   );
-}
+};
 
 PhotoListComponent.propTypes = {
   navigation: PropTypes.object
